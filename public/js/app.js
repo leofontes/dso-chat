@@ -7,6 +7,10 @@ console.log(name + ' wants to join ' + room);
 
 socket.on("connect", function() {
 	console.log("Connected to socket.io server from client");
+	socket.emit('joinRoom', {
+		name: name,
+		room: room
+	});
 });
 
 socket.on("message", function (message) {
@@ -16,6 +20,8 @@ socket.on("message", function (message) {
 	console.log(message.text);*/
 	$message.append('<p><strong>' + message.name + ' ' + momentTimestamp.local().format('h:mm a') + '</strong></p>')
 	$message.append('<p>' + message.text + '</p>');
+
+	jQuery('#roomName').text(room);
 });
 
 // Handles submitting of new message
