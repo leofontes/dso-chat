@@ -18,8 +18,8 @@ socket.on("message", function (message) {
 	var $message = jQuery('.messages');
 	/*console.log("New message: ");
 	console.log(message.text);*/
-	$message.append('<p><strong>' + message.name + ' ' + momentTimestamp.local().format('h:mm a') + '</strong></p>')
-	$message.append('<p>' + message.text + '</p>');
+	$message.append('<p class="username"><strong>' + message.name + ' ' + momentTimestamp.local().format('h:mm a') + '</strong></p>')
+	$message.append('<p class="message">' + message.text + '</p>');
 
 	jQuery('#roomName').text(room);
 });

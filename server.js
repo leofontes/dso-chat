@@ -46,8 +46,8 @@ io.on('connection', function (socket) {
 	});
 
 	socket.emit('message', {
-		name: 'System',
-		text: 'Welcome to the chat application!',
+		name: 'Sistema',
+		text: 'Bem vindo ao DSO Chat!',
 		timestamp: moment.valueOf()
 
 	});
